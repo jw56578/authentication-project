@@ -1,5 +1,5 @@
 # Setup
-* Fork, clone, yarn install, yarn start
+* Fork, clone, npm install, npm start
 * Windows users, remember to remove the single quotes from package.json
 * create your .env file
 
