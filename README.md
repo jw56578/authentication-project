@@ -22,7 +22,7 @@
 * Use the SignIn component in the SignUpSignIn component
 
 ### Implement handleSignIn in App.js
-* Need to do a fetch post to /signin 
+* Need to do a fetch post to /api/sessions 
 * Code will probably almost the same as handleSignUp
 * In the first fetch `then` there is a parameter for the `response`
 * this object has a property called status
