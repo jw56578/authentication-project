@@ -1,11 +1,20 @@
+# Intro
+This project is meant to be an example of how to implement an authentication system on the server and on the client. It is also meant to be used as an example of how to deploy your server code to a public production server. This git repo has a folder for client and server but they are meant to be viewed as two seperate project. They are in the same git repo for convienence sake. Pretend that the client folder has no idea the server folder exists and visa versa. The client folder is a normal create-react-app project. The server folder has the typical MVC code setup with all the boilerplate code for authentication.
+
+# .env
+Sometimes your code needs to be provided sensitive information. In our server, we need the url to our mongodb database which includes the username and password. Our authentication code needs a SECRET value to be the key for the encryption and decryption. This information should not be public but if we include it in our code which is part of a git repo, what will happen when you push it to github? This sensitive information will be viewable by the world. We need to organize our code such that all private information is in one specific file. The rest of the code can then retrieve the information from this file. This file should then not be included in the git repo. How do you tell git to ignore certain files? What happens when someone clones your repo and needs that file?
+
+
 # Setup
-* Fork, clone, npm install, npm start
-* Windows users, remember to remove the single quotes from package.json
-* create your .env file
+* fork and clone
+* do a `npm i` in each folder seperately (/client and /server)
+* in the /client folder do a npm start
+* in the /server folder do a nodemon index.js
+* create an .env file in /server and put in your custom information
 
 # Database
 * Make sure you are running mongoDB or using Mlab
-* Make sure you have a database called “authentication-practice”
+* Make sure you have a database setup called “authentication-practice” or similiar
 * put your database url in the env file
 
 # Client
@@ -46,6 +55,10 @@
 * The component is not using the property showNavItems
     * Use this property to determine whether to show the Nav Items, only show the secured routes if showNavItems === true
     * The sign out should always be shown
+### Build
+* Make sure you have everything working locally as you intend
+* Do a `npm run build`
+* Copy the contents of /client/build into /server/public. Don't copy the actual /build folder into the /server/public folder
 
 # Server
 * Create 3 secure routes on the server
