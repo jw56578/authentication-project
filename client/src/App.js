@@ -6,13 +6,10 @@ import TopNavbar from "./TopNavbar";
 import Secret from "./Secret";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      signUpSignInError: "",
-      authenticated: localStorage.getItem("token") || false
-    };
- 
+
+  state = {
+    signUpSignInError: "",
+    authenticated: localStorage.getItem("token") || false
   }
 
   handleSignUp = (credentials) => {
