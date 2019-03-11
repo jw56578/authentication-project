@@ -12,12 +12,10 @@ class App extends Component {
       signUpSignInError: "",
       authenticated: localStorage.getItem("token") || false
     };
-    this.handleSignIn = this.handleSignIn.bind(this);
-    this.handleSignOut = this.handleSignOut.bind(this);
-    this.handleSignUp = this.handleSignUp.bind(this);
+ 
   }
 
-  handleSignUp(credentials) {
+  handleSignUp = (credentials) => {
     const { username, password, confirmPassword } = credentials;
     if (!username.trim() || !password.trim() ) {
       this.setState({
@@ -42,18 +40,18 @@ class App extends Component {
     }
   }
 
-  handleSignIn(credentials) {
+  handleSignIn = (credentials)=>{
     // Handle Sign Up
   }
 
-  handleSignOut() {
+  handleSignOut = ()=> {
     localStorage.removeItem("token");
     this.setState({
       authenticated: false
     });
   }
 
-  renderSignUpSignIn() {
+  renderSignUpSignIn = ()=> {
     return (
       <SignUpSignIn 
         error={this.state.signUpSignInError} 
